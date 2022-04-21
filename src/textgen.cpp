@@ -5,8 +5,7 @@ MarkovGenerator::MarkovGenerator(std::string path, int preflen) {
     prefixSize = preflen;
     std::ifstream file(path);
     std::string s;
-    for (file >> s; !file.eof(); file >> s)
-    {
+    for (file >> s; !file.eof(); file >> s) {
         words.push_back(s);
     }
 
@@ -47,7 +46,7 @@ std::string MarkovGenerator::getText(int wordsamount) {
         if (currentSuffix.size() == 0)
             break;
 
-        int index = rand() % currentSuffix.size();
+        int index = rand_r() % currentSuffix.size();
         result += currentSuffix[index] + " ";
         currentPrefixes.erase(currentPrefixes.begin());
         currentPrefixes.push_back(currentSuffix[index]);
