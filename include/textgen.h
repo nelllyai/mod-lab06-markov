@@ -23,4 +23,5 @@ class MarkovGenerator {
     MarkovGenerator(std::string path, int preflen);
     std::string getText(int wordsamount);
     int getPrefixSize();
+    int getSuffixSize(std::string word1, std::string word2);
 };
