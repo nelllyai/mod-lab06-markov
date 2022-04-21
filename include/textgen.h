@@ -8,6 +8,7 @@
 #include <deque>
 #include <map>
 #include <fstream>
+#define rand_r rand
 
 const int NPREF = 2;
 const int MAXGEN = 1000;
