@@ -10,18 +10,13 @@ TEST(task1, test1) {
 
 TEST(task2, test2) {
     MarkovGenerator gen = MarkovGenerator("test.txt", NPREF);
-    int result = gen.getSuffixSize("corpses", "buried");
-    EXPECT_EQ(1, result);
+    std::vector<std::string> result = gen.getSuffix("corpses", "buried");
+    std::vector<std::string> waitForSuffix = {"for"};
+    EXPECT_EQ(waitForSuffix, result);
 }
 
 TEST(task3, test3) {
     MarkovGenerator gen = MarkovGenerator("test.txt", NPREF);
-    int result = gen.getPrefixSize();
-    EXPECT_EQ(2, result);
-}
-
-TEST(task4, test4) {
-    MarkovGenerator gen = MarkovGenerator("test.txt", NPREF);
-    int result = gen.getPrefixSize();
-    EXPECT_EQ(2, result);
+    int result = gen.getSuffixSize("corpses", "buried");
+    EXPECT_EQ(1, result);
 }
