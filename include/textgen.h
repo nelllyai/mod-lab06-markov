@@ -9,19 +9,17 @@
 #include <map>
 #include <fstream>
 
-using namespace std;
-
 const int NPREF = 2;
 const int MAXGEN = 1000;
 
 class MarkovGenerator {
 private:
     int prefixSize;
-    typedef deque<string> prefix;
-    map<prefix, vector<string> > statetab;
-    vector<string> words;
+    typedef std::deque<std::string> prefix;
+    std::map<prefix, std::vector<std::string> > statetab;
+    std::vector<std::string> words;
 public:
-    MarkovGenerator(string path, int preflen);
+    MarkovGenerator(std::tring path, int preflen);
     string getText(int wordsamount);
     int getPrefixSize();
 };
