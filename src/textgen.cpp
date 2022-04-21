@@ -1,3 +1,4 @@
+// Copyright 2022 UNN-IASR
 #include "textgen.h"
 
 MarkovGenerator::MarkovGenerator(std::string path, int preflen) {
@@ -53,4 +54,8 @@ string MarkovGenerator::getText(int wordsamount) {
 	}
 
 	return result;
+}
+
+int MarkovGenerator::getPrefixSize() {
+	return prefixSize;
 }

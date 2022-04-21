@@ -1,15 +1,18 @@
+// Copyright 2022 UNN-IASR
 #pragma once
+
 #include <stdio.h>
 #include <string>
 #include <iostream>
 #include <vector>
 #include <deque>
 #include <map>
-#include <sstream>
 #include <fstream>
-#include <random>
 
 using namespace std;
+
+const int NPREF = 2;
+const int MAXGEN = 1000;
 
 class MarkovGenerator {
 private:
@@ -20,5 +23,5 @@ private:
 public:
 	MarkovGenerator(string path, int preflen);
 	string getText(int wordsamount);
-	int getFirstPrefixSize();
+	int getPrefixSize();
 };
