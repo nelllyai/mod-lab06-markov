@@ -59,7 +59,7 @@ int MarkovGenerator::getPrefixSize() {
     return prefixSize;
 }
 
-std::vector<std::string> getSuffix(std::string word1, std::string word2) {
+std::vector<std::string> MarkovGenerator::getSuffix(std::string word1, std::string word2) {
     prefix prefixes;
     prefixes.push_back(word1);
     prefixes.push_back(word2);
