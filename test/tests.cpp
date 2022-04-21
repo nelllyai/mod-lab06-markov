@@ -10,7 +10,7 @@ TEST(task1, test1) {
 
 TEST(task2, test2) {
     MarkovGenerator gen = MarkovGenerator("test.txt", NPREF);
-    std::vector<std::string> result = gen.getSuffix("corpses", "buried");
+    std::vector<std::string> result = gen.getSuf("corpses", "buried");
     std::vector<std::string> waitForSuffix = {"for"};
     EXPECT_EQ(waitForSuffix, result);
 }
