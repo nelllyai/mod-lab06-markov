@@ -3,8 +3,8 @@
 
 MarkovGenerator::MarkovGenerator(std::string path, int preflen) {
     prefixSize = preflen;
-    ifstream file(path);
-    string s;
+    std::ifstream file(path);
+    std::string s;
     for (file >> s; !file.eof(); file >> s)
     {
         words.push_back(s);
@@ -12,7 +12,7 @@ MarkovGenerator::MarkovGenerator(std::string path, int preflen) {
 
     for (int i = 0; i < words.size() - prefixSize + 1; i++) {
         prefix aFewWords;
-        vector<string> suffixes;
+        std::vector<std::string> suffixes;
 
         for (int j = 0; j < prefixSize; j++) {
             aFewWords.push_back(words[i + j]);
@@ -39,10 +39,10 @@ string MarkovGenerator::getText(int wordsamount) {
     }
     srand(time(NULL));
 
-    string result = currentPrefixes[0] + " " + currentPrefixes[1] + " ";
+    std::string result = currentPrefixes[0] + " " + currentPrefixes[1] + " ";
 
     for (int i = prefixSize; i < wordsamount - prefixSize; i++) {
-        vector <string> currentSuffix = statetab.at(currentPrefixes);
+        std::vector <std::string> currentSuffix = statetab.at(currentPrefixes);
 
         if (currentSuffix.size() == 0)
             break;
