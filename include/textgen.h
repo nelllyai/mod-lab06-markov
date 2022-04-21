@@ -16,12 +16,12 @@ const int MAXGEN = 1000;
 
 class MarkovGenerator {
 private:
-	int prefixSize;
-	typedef deque<string> prefix;
-	map<prefix, vector<string> > statetab;
-	vector<string> words;
+    int prefixSize;
+    typedef deque<string> prefix;
+    map<prefix, vector<string> > statetab;
+    vector<string> words;
 public:
-	MarkovGenerator(string path, int preflen);
-	string getText(int wordsamount);
-	int getPrefixSize();
+    MarkovGenerator(string path, int preflen);
+    string getText(int wordsamount);
+    int getPrefixSize();
 };
