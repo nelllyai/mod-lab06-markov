@@ -69,5 +69,5 @@ std::vector<std::string> MarkovGenerator::getSuf(std::string f, std::string s) {
 }
 
 int MarkovGenerator::getSuffixSize(std::string word1, std::string word2) {
-    return this->getSuffix(word1, word2).size();
+    return this->getSuf(word1, word2).size();
 }
