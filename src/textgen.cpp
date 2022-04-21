@@ -58,3 +58,12 @@ std::string MarkovGenerator::getText(int wordsamount) {
 int MarkovGenerator::getPrefixSize() {
     return prefixSize;
 }
+
+int MarkovGenerator::getSuffixSize(string word1, string word2) {
+	prefix prefixes;
+	prefixes.push_back(word1);
+	prefixes.push_back(word2);
+
+	std::vector <std::string> suffix = statetab.at(prefixes);
+	return suffix.size();
+}
