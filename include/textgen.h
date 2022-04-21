@@ -13,12 +13,12 @@ const int NPREF = 2;
 const int MAXGEN = 1000;
 
 class MarkovGenerator {
-private:
+ private:
     int prefixSize;
     typedef std::deque<std::string> prefix;
     std::map<prefix, std::vector<std::string> > statetab;
     std::vector<std::string> words;
-public:
+ public:
     MarkovGenerator(std::string path, int preflen);
     std::string getText(int wordsamount);
     int getPrefixSize();
