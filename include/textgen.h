@@ -19,7 +19,7 @@ private:
     std::map<prefix, std::vector<std::string> > statetab;
     std::vector<std::string> words;
 public:
-    MarkovGenerator(std::tring path, int preflen);
-    string getText(int wordsamount);
+    MarkovGenerator(std::string path, int preflen);
+    std::string getText(int wordsamount);
     int getPrefixSize();
 };
