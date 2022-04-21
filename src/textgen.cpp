@@ -47,7 +47,7 @@ string MarkovGenerator::getText(int wordsamount) {
 		if (currentSuffix.size() == 0)
 			break;
 
-		int index = rand() % currentSuffix.size();
+		int index = rand_r() % currentSuffix.size();
 		result += currentSuffix[index] + " ";
 		currentPrefixes.erase(currentPrefixes.begin());
 		currentPrefixes.push_back(currentSuffix[index]);
