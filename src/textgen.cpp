@@ -60,10 +60,10 @@ int MarkovGenerator::getPrefixSize() {
 }
 
 int MarkovGenerator::getSuffixSize(std::string word1, std::string word2) {
-	prefix prefixes;
-	prefixes.push_back(word1);
-	prefixes.push_back(word2);
+    prefix prefixes;
+    prefixes.push_back(word1);
+    prefixes.push_back(word2);
 
-	std::vector <std::string> suffix = statetab.at(prefixes);
-	return suffix.size();
+    std::vector <std::string> suffix = statetab.at(prefixes);
+    return suffix.size();
 }
