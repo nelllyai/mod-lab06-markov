@@ -59,10 +59,10 @@ int MarkovGenerator::getPrefixSize() {
     return prefixSize;
 }
 
-std::vector<std::string> MarkovGenerator::getSuffix(std::string w1, std::string w2) {
+std::vector<std::string> MarkovGenerator::getSuf(std::string f, std::string s) {
     prefix prefixes;
-    prefixes.push_back(w1);
-    prefixes.push_back(w2);
+    prefixes.push_back(f);
+    prefixes.push_back(s);
 
     std::vector <std::string> suffix = statetab.at(prefixes);
     return suffix;
