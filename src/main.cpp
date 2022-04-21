@@ -2,6 +2,6 @@
 #include "textgen.h"
 
 int main() {
-	MarkovGenerator gen = MarkovGenerator("test.txt", NPREF);
-	cout << gen.getText(MAXGEN) << endl;
+    MarkovGenerator gen = MarkovGenerator("test.txt", NPREF);
+    std::cout << gen.getText(MAXGEN) << std::endl;
 }
