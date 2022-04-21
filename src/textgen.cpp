@@ -32,7 +32,7 @@ MarkovGenerator::MarkovGenerator(std::string path, int preflen) {
     }
 }
 
-string MarkovGenerator::getText(int wordsamount) {
+std::string MarkovGenerator::getText(int wordsamount) {
     prefix currentPrefixes;
     for (int i = 0; i < prefixSize; i++) {
         currentPrefixes.push_back(words[i]);
