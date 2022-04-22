@@ -65,7 +65,7 @@ std::string MarkovGenerator::getSuffix(std::deque<std::string> prefdeq) {
         prefixes.push_back(prefdeq[i]);
 
     srand(time(NULL));
-    std::vector <string> suffix = statetab.at(prefixes);
+    std::vector <std::string> suffix = statetab.at(prefixes);
     int index = rand_r() % suffix.size();
     return suffix[index];
 }
