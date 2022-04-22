@@ -36,5 +36,5 @@ TEST(task5, test5) {
     for (int i = 0; i < text.size(); i++) {
         if (text[i] == ' ') counter++;
     }
-    EXPECT_TRUE(counter <= 1001);
+    EXPECT_LE(counter, MAXGEN + 1);
 }
