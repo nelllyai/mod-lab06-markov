@@ -10,9 +10,9 @@ TEST(task1, test1) {
 
 TEST(task2, test2) {
     MarkovGenerator gen = MarkovGenerator("test.txt", NPREF);
-    std::deque<std::string> newPrefixes {"corpses", "buried"};
+    std::deque<std::string> newPrefixes {"rock", "spewed"};
     std::string newSuffix = gen.getSuffix(newPrefixes);
-    EXPECT_EQ("for", newSuffix);
+    EXPECT_EQ("forth", newSuffix);
 }
 
 TEST(task3, test3) {
