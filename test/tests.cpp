@@ -10,13 +10,21 @@ TEST(task1, test1) {
 
 TEST(task2, test2) {
     MarkovGenerator gen = MarkovGenerator("test.txt", NPREF);
-    std::vector<std::string> result = gen.getSuf("corpses", "buried");
-    std::vector<std::string> waitForSuffix = {"for"};
-    EXPECT_EQ(waitForSuffix, result);
+    std::deque<std::string> newPrefixes {"corpses", "buried"};
+    std::string newSuffix = getSuffix(newPrefixes);
+    EXPECT_EQ("for", newSuffix);
 }
 
 TEST(task3, test3) {
     MarkovGenerator gen = MarkovGenerator("test.txt", NPREF);
-    int result = gen.getSuffixSize("corpses", "buried");
-    EXPECT_EQ(1, result);
+    std::deque<std::string> newPrefixes {"corpses", "buried"};
+    std::string newSuffix = getSuffix(newPrefixes);
+    EXPECT_EQ("for", newSuffix);
+}
+
+TEST(task4, test4) {
+    MarkovGenerator gen = MarkovGenerator("test.txt", NPREF);
+    std::deque<std::string> newPrefixes {"things", "worth"};
+    std::string newSuffix = getSuffix(newPrefixes);
+    EXPECT_TRUE(newSuffix == "dying" || newSuffix == "living");
 }
