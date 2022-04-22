@@ -28,3 +28,13 @@ TEST(task4, test4) {
     std::string newSuffix = gen.getSuffix(newPrefixes);
     EXPECT_TRUE(newSuffix == "dying" || newSuffix == "living");
 }
+
+TEST(task5, test5) {
+    MarkovGenerator gen = MarkovGenerator("test.txt", NPREF);
+    std::string text = gen.getText(MAXGEN);
+    int counter = 0;
+    for (int i = 0; i < text.size(); i++) {
+        if (text[i] == ' ') counter++;
+    }
+    EXPECT_TRUE(counter <= 1001);
+}
