@@ -59,26 +59,13 @@ int MarkovGenerator::getPrefixSize() {
     return prefixSize;
 }
 
-std::vector<std::string> MarkovGenerator::getSuf(std::string f, std::string s) {
-    prefix prefixes;
-    prefixes.push_back(f);
-    prefixes.push_back(s);
-
-    std::vector <std::string> suffix = statetab.at(prefixes);
-    return suffix;
-}
-
-int MarkovGenerator::getSuffixSize(std::string word1, std::string word2) {
-    return this->getSuf(word1, word2).size();
-}
-
 std::string MarkovGenerator::getSuffix(std::deque<std::string> prefdeq) {
-	prefix prefixes;
-	for (int i = 0; i < prefixdeq.size(); i++)
-		prefixes.push_back(prefixdeq[i]);
+    prefix prefixes;
+    for (int i = 0; i < prefdeq.size(); i++)
+        prefixes.push_back(prefdeq[i]);
 
-	srand(time(NULL));
-	vector <string> suffix = statetab.at(prefixes);
-	int index = rand_r() % suffix.size();
-	return suffix[index];
+    srand(time(NULL));
+    std::vector <string> suffix = statetab.at(prefixes);
+    int index = rand_r() % suffix.size();
+    return suffix[index];
 }
